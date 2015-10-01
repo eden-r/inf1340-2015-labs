@@ -25,10 +25,6 @@ def vowel_or_consonant():
     else:
         print("consonant")
 
-    # ask user to input lowercase letter
-    # if letter is a, e, i, o, or u, print "vowel"
-    # if letter is y, print "sometimes a consonant, sometimes a vowel"
-    # if letter is other, print "consonant"
 
     """
     Exercise: Vowel or Consonant
@@ -38,5 +34,3 @@ def vowel_or_consonant():
     "sometimes a vowel, sometimes a consonant". Otherwise your program should
     display a message indicating that the letter is a "consonant".
     """
-
-vowel_or_consonant()
