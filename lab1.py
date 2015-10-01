@@ -25,6 +25,11 @@ def vowel_or_consonant():
     else:
         print("consonant")
 
+    # ask user to input lowercase letter
+    # if letter is a, e, i, o, or u, print "vowel"
+    # if letter is y, print "sometimes a consonant, sometimes a vowel"
+    # if letter is other, print "consonant"
+
     """
     Exercise: Vowel or Consonant
     Reads a letter of the alphabet from the user. (You can assume that it's
