@@ -9,6 +9,22 @@ __license__ = "MIT License"
 
 
 def vowel_or_consonant():
+    letter = raw_input("Please enter a lowercase letter: ")
+    if letter == "a":
+        print ("vowel")
+    elif letter == "e":
+        print ("vowel")
+    elif letter == "i":
+        print ("vowel")
+    elif letter == "o":
+        print ("vowel")
+    elif letter == "u":
+        print ("vowel")
+    elif letter == "y":
+        print("sometimes a vowel, sometimes a consonant")
+    else:
+        print("consonant")
+
     """
     Exercise: Vowel or Consonant
     Reads a letter of the alphabet from the user. (You can assume that it's
@@ -18,3 +34,4 @@ def vowel_or_consonant():
     display a message indicating that the letter is a "consonant".
     """
 
+vowel_or_consonant()
