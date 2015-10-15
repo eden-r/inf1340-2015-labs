@@ -14,8 +14,25 @@ function in name_that_shape()
 
 The function should prompt the user for input until a legal value is
 entered. A legal value is any integer.
+"""
+
+
+# FUNCTION: PROMPT FOR VALID INPUT
 
 """
+INPUT: invalid user input
+types of invalid input: string or float
+other: negative integer
+
+1. make a function
+2. call raw input
+2a. use a while input to keep calling input until it is valid
+3. if possible convert to integer
+3a. using try/except
+3b. using string.isgigit OR string.isdigit[0] == "-" and string[1:].isdigit
+4. return input
+"""
+
 
 def name_that_shape():
     """
@@ -37,8 +54,7 @@ def name_that_shape():
     Errors: ValueError when input is a string or float
 
     """
-
-    sides = int(raw_input("Number of sides:"))
+    sides = get_user_input()
 
     if sides == 3:
         print("triangle")
@@ -59,4 +75,23 @@ def name_that_shape():
     else:
         print("Error")
 
-# name_that_shape()
+
+
+def get_user_input():
+    output = ""
+    output = str(raw_input("Number of sides:"))
+    keeping_going = True
+    # while loop to get input
+    while keeping_going:
+        output = raw_input("Number of sides:")
+        if output.isdigit() or (output[0] == "-" and output[1:].isdigit()):
+            keeping_going = False
+        else:
+            keeping_going = True
+    output = int(output)
+    return output
+
+    # check whether input is the correct form
+
+
+#name_that_shape()
