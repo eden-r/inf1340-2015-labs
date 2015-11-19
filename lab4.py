@@ -39,13 +39,12 @@ def calculate_your_bill(purchase):
     prov_tax = purchase * PROVINCIAL_TAX
     fed_tax = purchase * FEDERAL_TAX
     all_tax = fed_tax + prov_tax
-    sale_price = purchase + (purchase * all_tax)
+    sale_price = purchase + all_tax
     print_your_bill(purchase, prov_tax, fed_tax, all_tax, sale_price)
     return
 
 # call the function
 calculate_your_bill(100.35)
-
 
 with open(file_name, "r") as file_reader:
     for line in file_reader:
