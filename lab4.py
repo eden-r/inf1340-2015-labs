@@ -43,7 +43,7 @@ def calculate_your_bill(purchase):
     print_your_bill(purchase, prov_tax, fed_tax, all_tax, sale_price)
     return
 
-
+# call the function
 calculate_your_bill(100.35)
 
 
