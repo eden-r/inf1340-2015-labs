@@ -22,13 +22,17 @@ __license__ = "MIT License"
 PROVINCIAL_TAX = .05
 FEDERAL_TAX = .025
 
+# write to file
+file_name = "receipt.txt"
+
 # print your bill
 def print_your_bill(purchase, prov_tax, fed_tax, all_tax, sale_price):
-    print "Amout of purchase: {0:2f}".format(purchase)
-    print "Provincial tax: {0:.2f}".format(prov_tax)
-    print "Federal tax: {0:.2f}".format(fed_tax)
-    print "Total tax: {0:.2f}".format(all_tax)
-    print "Total sale: {0:.2f}".format(sale_price)
+    with open(file_name, "w") as output_file:
+        output_file.write("Amount of purchase: {0:.2f}".format(purchase))
+        output_file.write("\nProvincial tax: {0:.2f}".format(prov_tax))
+        output_file.write("\nFederal tax: {0:.2f}".format(fed_tax))
+        output_file.write("\nTotal tax: {0:.2f}".format(all_tax))
+        output_file.write("\nTotal sale: {0:.2f}".format(sale_price))
 
 # calculate taxes
 def calculate_your_bill(purchase):
@@ -37,14 +41,11 @@ def calculate_your_bill(purchase):
     all_tax = fed_tax + prov_tax
     sale_price = purchase + (purchase * all_tax)
     print_your_bill(purchase, prov_tax, fed_tax, all_tax, sale_price)
+    return
 
-print calculate_your_bill(100.35)
 
-# write to file
-file_name = "receipt.txt"
+calculate_your_bill(100.35)
 
-with open(file_name, "w") as output_file:
-    output_file.write(str(calculate_your_bill(100.35)))
 
 with open(file_name, "r") as file_reader:
     for line in file_reader:
