@@ -29,27 +29,27 @@ def name_that_shape(sides):
             ValueError when input is < 3 or > 10
 
     """
-
+    sides = str(sides)
     if sides.isdigit() or sides[0] is "-" and sides[1:].isdigit():
         sides = int(sides)
     else:
-        raise TypeError
-
+        return None
     if sides == 3:
-        print("triangle")
+        return("triangle")
     elif sides == 4:
-        print("quadrilateral")
+        return("quadrilateral")
     elif sides == 5:
-        print("pentagon")
+        return("pentagon")
     elif sides == 6:
-        print("hexagon")
+        return("hexagon")
     elif sides == 7:
-        print("heptagon")
+        return("heptagon")
     elif sides == 8:
-        print("octagon")
+        return("octagon")
     elif sides == 9:
-        print("nonagon")
+        return("nonagon")
     elif sides == 10:
-        print("decagon")
+        return("decagon")
     else:
-        raise ValueError
+        return None
+
