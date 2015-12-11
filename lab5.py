@@ -65,18 +65,33 @@ class NameThatShapeGUI:
 
         Tkinter.mainloop()
 
-    def error_message(self):
-        tkMessageBox.showinfo("Error", "\"" + self.side_entry.get() + "\" is invalide input")
+    def value_error_message(self):
+        tkMessageBox.showinfo("Error", "\"" + self.side_entry.get() + "?\" I don't know a shape with that many sides")
+    def type_error_message(self):
+        tkMessageBox.showinfo("Error", "\"" + self.side_entry.get() + "\" is invalid input")
 
     def convert(self):
         # pop up a modal dialogue
         #tkMessageBox.showinfo("Response", self.side_entry.get())
         #self.value.set(self.side_entry.get())
-        shape = name_that_shape(self.side_entry.get())
-        if shape is None:
-            self.error_message()
-        else:
-            self.value.set(shape)
+        sides = self.side_entry.get()
+        sides = str(sides)
+
+        try:
+            if sides.isdigit() or sides[0] is "-" and sides[1:].isdigit():
+                sides = int(sides)
+            else:
+                raise TypeError
+            if (sides > 10) or (sides < 3):
+                raise ValueError
+        except TypeError:
+            self.type_error_message()
+        except ValueError:
+            self.value_error_message()
+
+        self.value.set(name_that_shape(sides))
+
+
 
 # Instantiating the object
 ntsg = NameThatShapeGUI()

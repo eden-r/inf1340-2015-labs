@@ -8,6 +8,7 @@ __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
 
+
 def name_that_shape(sides):
     """
     For a given number of sides in a regular polygon, returns the shape name
@@ -29,11 +30,11 @@ def name_that_shape(sides):
             ValueError when input is < 3 or > 10
 
     """
-    sides = str(sides)
-    if sides.isdigit() or sides[0] is "-" and sides[1:].isdigit():
-        sides = int(sides)
-    else:
-        return None
+    #sides = str(sides)
+    #if sides.isdigit() or sides[0] is "-" and sides[1:].isdigit():
+    #    sides = int(sides)
+    #else:
+    #    raise TypeError
     if sides == 3:
         return("triangle")
     elif sides == 4:
@@ -50,6 +51,7 @@ def name_that_shape(sides):
         return("nonagon")
     elif sides == 10:
         return("decagon")
-    else:
-        return None
+    #else:
+    #    raise ValueError
+
 
