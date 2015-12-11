@@ -25,10 +25,13 @@ FEDERAL_TAX = .025
 # write to file
 file_name = "receipt.txt"
 
+#with open(file_name, "w") as a:
+#    a.write("Record of Receipts")
+
 # print your bill
 def print_your_bill(purchase, prov_tax, fed_tax, all_tax, sale_price):
-    with open(file_name, "w") as output_file:
-        output_file.write("Amount of purchase: {0:.2f}".format(purchase))
+    with open(file_name, "a") as output_file:
+        output_file.write("\n\nAmount of purchase: {0:.2f}".format(purchase))
         output_file.write("\nProvincial tax: {0:.2f}".format(prov_tax))
         output_file.write("\nFederal tax: {0:.2f}".format(fed_tax))
         output_file.write("\nTotal tax: {0:.2f}".format(all_tax))
@@ -44,7 +47,8 @@ def calculate_your_bill(purchase):
     return
 
 # call the function
-calculate_your_bill(100.35)
+#calculate_your_bill(100.35)
+#calculate_your_bill(74.29)
 
 with open(file_name, "r") as file_reader:
     for line in file_reader:
